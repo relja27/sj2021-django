@@ -6,7 +6,7 @@ class Vaccine(models.Model):
     name = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     doses = models.IntegerField(validators=[MinValueValidator(1),
-                                            MaxValueValidator(2)], default='')
+                                            MaxValueValidator(3)], default='')
 
     def __str__(self):
         return self.name
