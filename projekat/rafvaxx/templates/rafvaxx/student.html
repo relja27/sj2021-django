@@ -1,0 +1,30 @@
+{% extends 'rafvaxx/index.html' %}
+{% block content %}
+<hr class = "row">
+
+     <div class="col-md-5"></div>
+    <h1>Studenti</h1>
+
+    <h5>Ukupno vakcinisano {{ total_student }} od 400 studenata</h5>
+    <h5>Procenatualno {{ procenat }}% studenata</h5>
+    <div class="card card-body">
+        <table class="table table-sm">
+            <tr>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Godina upisa</th>
+                <th>Vakcina</th>
+            </tr>
+            {% for s in student %}
+            <tr>
+                <td>{{s.name}}</td>
+                <td>{{s.lastname}}</td>
+                <td>{{s.year}}</td>
+                <td>{{s.vaccine}}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
