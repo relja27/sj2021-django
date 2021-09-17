@@ -15,9 +15,8 @@ def student(request):
 
 def vaccine(request):
     vaccine = Vaccine.objects.all()
-    student = Student.objects.all()
-    increment = 0
-    return render(request, 'rafvaxx/vaccine.html', {'vaccine': vaccine, 'student':student, 'increment':increment})
+    total_vaccine = vaccine.count()
+    return render(request, 'rafvaxx/vaccine.html', {'vaccine': vaccine, 'total_vaccine':total_vaccine})
 
 def user(request):
     user = User.objects.all()
